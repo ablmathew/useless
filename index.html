@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Skill Swapper</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body background="pixaby.jpg">
+    
+    <header>
+        <h1><center>Skill Swapper</center></h1><br>
+        <!-- Three-dot Menu Button -->
+        <div class="menu-button" onclick="toggleMenu()">&#x22EE;</div>
+        <!-- Side Menu -->
+        <nav id="side-menu" class="side-menu">
+            <ul>
+                <li onclick="showSection('home')">Home</li>
+                <li onclick="showSection('learn')">Learn</li>
+                <li onclick="showSection('profile')">Profile</li>
+                <li onclick="showSection('about')">About</li>
+                <li onclick="showSection('settings')">Settings</li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Sections -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="content-section active">
+            <h2>Welcome to Skill Swapper</h2><br>
+            <input type="text" id="search" placeholder="Search for skills.....">
+            <p>Exchange Your skills with Stranges and learn something new from others!</p><br><br>
+            <div class="slider-container">
+                <div class="slide fade">
+                    <img src="img1.webp" alt="Skill Image 1" width="1000" height="500" class="roundedge">
+                </div>
+                <div class="slide fade">
+                    <img src="img2.webp" alt="Skill Image 2" width="1000" height="500" class="roundedge">
+                </div>
+                <div class="slide fade">
+                    <img src="img3.webp" alt="Skill Image 3" width="1000" height="500" class="roundedge">
+                </div>
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+        </section>
+        <!-- Learn Section -->
+        <section id="learn" class="content-section content-box"> 
+            <h2>Learn</h2>
+            <h3>Previous Learning Skills</h3>
+            <ul id="previous-skills">
+                <li>HTML Basics</li>
+                <li>CSS Styling</li>
+            </ul>
+            <h3>Ongoing Skills</h3>
+            <ul id="ongoing-skills">
+                <li onclick="openChat('JavaScript Fundamentals')">JavaScript Fundamentals</li>
+            </ul>
+            <div id="chat-window" class="chat-window" style="display:none;">
+                <h3>Chat with Mentor</h3>
+                <div id="chat-messages"></div>
+                <input type="text" id="chat-input" placeholder="Type a message..." onkeypress="sendMessage(event)">
+                <button onclick="sendMessage()">Send</button>
+                <div id="video-section">
+                    <video width="100%" controls>
+                        <source src="mentor_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+        <!-- Profile Section -->
+      <!-- Profile Section -->
+<section id="profile" class="content-section">
+    <div class="content-card">
+        <h2>Profile</h2>
+        <div class="profile-edit">
+            <label class="profile-photo" for="profile-photo-upload">
+                <img src="default-profile.jpg" alt="Profile Photo" id="profile-img">
+                <input type="file" id="profile-photo-upload" onchange="previewImage(event)">
+            </label>
+            <button onclick="editUserId()">Change User ID</button>
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Email:</strong> skillswap@gmail.com</p>
+            <p><strong>Skills Interested In:</strong> JavaScript, Python</p>
+        </div>
+    </div>
+</section>
+
+        <!-- About Section -->
+        <section id="about" class="content-section content-box">
+            <h2>About Us</h2>
+            <p>Skill Swapper is a platform to exchange skills, connect with mentors, and learn in a collaborative environment.</p>
+        </section>
+        
+        <!-- Settings Section -->
+        <section id="settings" class="content-section content-box">
+            <h2>Settings</h2>
+            <p>Adjust your preferences here, including theme and language settings.</p>
+            <div class="settings-options">
+                <div class="select-theme">
+                    <h3>Theme Settings</h3>
+                    <select>
+                        <option>Dark Mode</option>
+                        <option>Light Mode</option>
+                        <option>System Default</option>
+                    </select>
+                </div>
+                <div class="select-language">
+                    <h3>Language Settings</h3>
+                    <select>
+                        <option>English</option>
+                        <option>Spanish</option>
+                        <option>French</option>
+                        <option>German</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script2.js"></script>
+</body>
+</html>
